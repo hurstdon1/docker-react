@@ -1,9 +1,8 @@
-version: '3'
-services: 
-  redis-server:
-    image: 'redis'
-  node-app:
-    restart: 'no'
-    build: .
-    ports: 
-      - "4001:8081"
+    version: '3'
+    services:
+      web:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        ports:
+          - '80:80'
